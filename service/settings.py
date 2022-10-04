@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
-
+# TODO: add chennels
 INSTALLED_APPS = [
     'rest_framework',
     'django.contrib.admin',
@@ -40,12 +40,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework_simplejwt',
     'api.apps.ApiConfig',
+    'channels',
 ]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
+}
+
+# TODO: add this
+# TODO: lo que hace el websocket en este caso es que cuando el usuario enviar un mensaje este va al websocket y el webcocket le envia esta informacion automaticamente a los otros miembros del grupo
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
 }
 
 # SIMPLE JWT TO CREATE JSON ACCESS TOKENS
@@ -106,6 +118,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'service.wsgi.application'
+# TODO: add this
+ASGI_APPLICATION = 'service.asgi.application'
 
 
 # Database

@@ -20,9 +20,10 @@
       style="height: 100vh"
       class="d-flex justify-content-center align-items-center"
     >
-    <form method="post">
+    <form method="post" action="{% url "room" %}">
+      {% csrf_token %}
 			<!-- input field to enter room no -->
-			<input placeholder="enter room no" class="form-control" type="text" name="room_no">
+			<input placeholder="enter room number" class="form-control" type="text" name="room_number">
 			<!-- input field for user to enter name -->
 			<input placeholder="enter name" class="form-control" type="text" name="name">
 			<div class="d-flex justify-content-center">
