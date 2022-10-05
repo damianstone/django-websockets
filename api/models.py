@@ -1,7 +1,8 @@
-from random import choices
-# TODO: models coming to gis
-from django.utils import timezone
-from django.contrib.gis.geos import Point
-from django.contrib.auth.models import AbstractUser
+from django.db import models
+
+# Create your models here.
 
 
+class ChatModel(models.Model):
+    room_number = models.CharField(max_length=127)
+    message = models.TextField()

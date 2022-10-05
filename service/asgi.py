@@ -22,7 +22,10 @@ django_asgi_app = get_asgi_application()
 
 application = ProtocolTypeRouter({
     "http": django_asgi_app,
-    # Just HTTP for now. (We can add other protocols later.)
-    "websocket": AuthMiddlewareStack(URLRouter([path('ws/chat/<int:room_name>/', ChatConsumer.as_asgi() )]))
-    
+    "websocket": AuthMiddlewareStack(
+        URLRouter(
+            [path('ws/chat/<int:room_name>/',
+                  ChatConsumer.as_asgi())]
+        )
+    )
 })

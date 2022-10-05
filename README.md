@@ -14,6 +14,15 @@ pip install -r requirements.txt
 ### Install Django Channels
 ```bash
 python -m pip install -U channels
+pip install channels-redis
+```
+
+#### Download Redis
+https://redis.io/
+
+### Start redis server in your terminal
+```bash
+redis-server
 ```
 
 #### Migrate models

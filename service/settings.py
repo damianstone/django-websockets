@@ -118,6 +118,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'service.wsgi.application'
+
 # TODO: add this
 ASGI_APPLICATION = 'service.asgi.application'
 
