@@ -35,3 +35,9 @@ python manage.py migrate
 ```python
 python manage.py runserver
 ```
+
+## Porject screenshot
+
+<p float="center" align="left">
+  <img src="https://user-images.githubusercontent.com/63305840/194764633-0e6f88aa-635c-47f5-8473-fa5cf62af29e.png" width="150" />
+</p>
